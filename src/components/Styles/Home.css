@@ -1,0 +1,118 @@
+/* HOME HERO SECTION */
+.home-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 100px 5%; /* Reduced from 10% to 5% to bring content closer to edges */
+  width: 100%;
+  background: transparent !important; /* Ensures the star background shows through */
+}
+
+.home-content {
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hello-text {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive scaling */
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* TYPEWRITER WRAPPER */
+.title-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Keeps "I'm" and the Box on the same line */
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.main-title {
+  font-size: clamp(1.5rem, 7vw, 5.5rem); 
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+/* THE HIGHLIGHTED BOX */
+.typewriter-box {
+  background-color: var(--accent);
+  color: #000;
+  padding: 0.2rem 1rem;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 7vw, 5.5rem); 
+  white-space: nowrap; 
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3); /* Cyan outer glow */
+}
+
+.home-subtitle {
+  font-size: clamp(0.8rem, 2.8vw, 1.8rem);
+  color: #a0a0a0;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* CURSOR BLINK ANIMATION */
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { color: transparent; }
+  50% { color: #000; }
+}
+
+/* MOUSE SCROLL INDICATOR */
+.container_mouse {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mouse-btn {
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(122, 122, 124, 0.9);
+  border-radius: 20px;
+  display: flex;
+}
+
+.mouse-scroll {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(170deg, var(--accent), #fff);
+  border-radius: 50%;
+  margin: auto;
+  animation: scrolling13 1s linear infinite; /* Vertical bouncing dot */
+}
+
+@keyframes scrolling13 {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(15px); }
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 600px) {
+  .home-section { padding: 0 5%; }
+  .title-container { gap: 6px; }
+}

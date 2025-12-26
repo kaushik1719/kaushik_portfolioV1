@@ -1,0 +1,61 @@
+/* FULL-SCREEN STAR CONTAINER */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background: radial-gradient(ellipse at bottom, #050021 0%, #000000 100%);
+  overflow: hidden;
+}
+
+/* LAYER 1: SMALL TINY STARS */
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  /* Massive coordinate list for density */
+  box-shadow: 10vw 20vh #FFF, 25vw 45vh #FFF, 80vw 10vh #FFF, 55vw 90vh #FFF, 15vw 70vh #FFF, 40vw 30vh #FFF, 70vw 60vh #FFF, 90vw 85vh #FFF, 33vw 12vh #FFF, 66vw 44vh #FFF, 12vw 88vh #FFF, 45vw 55vh #FFF, 78vw 22vh #FFF, 5vw 35vh #FFF, 95vw 15vh #FFF, 50vw 50vh #FFF, 22vw 67vh #FFF, 88vw 33vh #FFF, 10vw 95vh #FFF, 60vw 5vh #FFF, 30vw 80vh #FFF, 75vw 40vh #FFF, 42vw 72vh #FFF, 18vw 28vh #FFF, 82vw 58vh #FFF, 4vw 6vh #FFF, 96vw 94vh #FFF, 53vw 37vh #FFF, 27vw 83vh #FFF, 68vw 19vh #FFF, 11vw 52vh #FFF, 89vw 76vh #FFF, 36vw 41vh #FFF, 62vw 81vh #FFF, 14vw 16vh #FFF, 77vw 92vh #FFF, 48vw 25vh #FFF, 21vw 59vh #FFF, 84vw 11vh #FFF, 9vw 39vh #FFF, 91vw 64vh #FFF, 38vw 87vh #FFF, 65vw 29vh #FFF, 17vw 73vh #FFF, 73vw 49vh #FFF, 44vw 62vh #FFF, 29vw 14vh #FFF, 81vw 96vh #FFF, 2vw 46vh #FFF, 98vw 53vh #FFF;
+  /* Replicate the shadows in :after for a seamless loop */
+}
+
+#stars:after {
+  content: " ";
+  position: absolute;
+  top: 100vh;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+/* Layer 2: Medium Stars */
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 15vw 15vh #FFF, 85vw 85vh #FFF, 50vw 10vh #FFF, 10vw 50vh #FFF, 70vw 20vh #FFF, 30vw 90vh #FFF, 40vw 40vh #FFF, 60vw 60vh #FFF, 20vw 80vh #FFF, 90vw 30vh #FFF;
+  animation: animStar 100s linear infinite;
+}
+
+#stars2:after {
+  content: " ";
+  position: absolute;
+  top: 100vh;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+/* Animation */
+#stars {
+  animation: animStar 150s linear infinite;
+}
+
+/* VERTICAL SCROLLING ANIMATION */
+@keyframes animStar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100vh); }
+}

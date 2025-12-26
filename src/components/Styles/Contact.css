@@ -1,0 +1,130 @@
+/* CONTACT SECTION BASE */
+.contact-section {
+  width: 100%;
+  padding: 80px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ABOUT BOX STYLE (Previous styles maintained) */
+.about-box-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 242, 255, 0.1);
+  border-radius: 30px;
+  padding: 4rem 3rem;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.quote-icon {
+  position: absolute;
+  font-size: 5rem;
+  color: var(--accent);
+  opacity: 0.2;
+}
+
+.quote-left { top: 15px; left: 25px; }
+.quote-right { bottom: -15px; right: 25px; }
+
+.about-text {
+  color: #e0e0e0;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* SOCIAL FOOTER SECTION */
+.contact-footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* INDIVIDUAL ICON STYLING */
+.social-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* HOVER EFFECTS WITH BRAND COLORS */
+.social-icon:hover {
+  transform: translateY(-8px) scale(1.1);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon.email:hover {
+  background: var(--accent); /* Cyan */
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+.social-icon.linkedin:hover {
+  background: #0077b5; /* LinkedIn Blue */
+  border-color: #0077b5;
+  box-shadow: 0 0 20px rgba(0, 119, 181, 0.5);
+}
+
+.social-icon.github:hover {
+  background: #333; /* GitHub Dark Grey/Black */
+  border-color: #555;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  .about-card {
+    padding: 3rem 1.5rem;
+    border-radius: 24px;
+  }
+  
+  .about-text { font-size: 1rem; }
+  
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .social-links { gap: 15px; }
+}
+
+@media (max-width: 480px) {
+  .quote-icon { font-size: 3.5rem; }
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}

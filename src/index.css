@@ -1,0 +1,70 @@
+/* GLOBAL VARIABLES & THEME */
+:root {
+  --bg-dark: #000000;
+  --accent: #00f2ff; /* Primary branding color */
+}
+
+/* RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Enables fluid jumping to #id anchors */
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+  background-color: #000; /* Ensure no white peeks through */
+  width: 100%;
+}
+
+
+/* REUSABLE SECTION LAYOUT */
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.section-content {
+  text-align: center;
+  padding: 20px;
+}
+
+/* TYPOGRAPHY FOR SECTIONS */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  color: #a0a0a0;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Clips any content exceeding the screen width */
+  position: relative;
+}
+
+* {
+  box-sizing: border-box; /* Ensures padding doesn't increase element width */
+}

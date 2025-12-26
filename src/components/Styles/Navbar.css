@@ -1,0 +1,186 @@
+/* FLOATING NAVIGATION BAR */
+.nav-wrapper {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  background: rgba(0, 0, 0, 0.2); 
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 100px;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  padding: 0.8rem 2.5rem;
+  animation: slideInTop 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInTop {
+  0% { top: -100px; opacity: 0; }
+  100% { top: 25px; opacity: 1; }
+}
+
+/* STICKY STYLE ON SCROLL */
+.nav-wrapper.scrolled {
+  top: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  animation: none;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 5px 0;
+}
+
+/* LINK HOVER EFFECTS */
+.nav-links a:hover {
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px var(--accent);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* MOBILE BURGER MENU */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.bar {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    left: auto;
+    transform: none;
+  }
+  .nav-links.open { right: 0; }
+  .bar.anim:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .bar.anim:nth-child(2) { opacity: 0; }
+  .bar.anim:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+
+/* Container for Resume + Hamburger to keep them together on the right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* RESUME BUTTON STYLING */
+.resume-btn {
+  background: var(--accent); /* Uses your Cyan color */
+  color: #000; /* Dark text for contrast */
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Hover State: Swaps colors */
+.resume-btn:hover {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+/* RESPONSIVITY ADJUSTMENTS */
+@media (max-width: 768px) {
+  .resume-btn {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .nav-right {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ensure the button doesn't take too much space on very small screens */
+  .resume-btn {
+    padding: 5px 12px;
+    font-size: 0.75rem;
+  }
+}

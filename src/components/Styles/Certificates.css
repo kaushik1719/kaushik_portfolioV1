@@ -1,0 +1,121 @@
+.cert-section {
+  width: 100%;
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.cert-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 242, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.cert-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
+  background: rgba(0, 242, 255, 0.03);
+}
+
+/* TOP HALF PREVIEW */
+.cert-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Adjust this to show exactly half */
+  overflow: hidden;
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+}
+
+.cert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top; /* This ensures the top half of the cert is visible */
+  transition: transform 0.5s ease;
+}
+
+.cert-card:hover .cert-img {
+  transform: scale(1.1);
+}
+
+.cert-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cert-card:hover .cert-overlay {
+  opacity: 1;
+}
+
+.cert-overlay span {
+  color: #fff;
+  border: 2px solid var(--accent);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  background: rgba(0, 242, 255, 0.1);
+}
+
+/* BOTTOM INFO SECTION */
+.cert-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cert-date {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cert-title {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.cert-issuer {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 480px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-image-wrapper {
+    height: 180px;
+  }
+}
