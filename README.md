@@ -1,3 +1,4 @@
+
 # 🚀 Kaushik Kanani | Portfolio
 ### Front-End Web Developer & B.Tech IT Student
 
@@ -25,3 +26,5 @@ src/
 ├── components/      # Modular React Components (Navbar, Home, Projects, etc.)
 ├── styles/          # Section-specific CSS files
 └── App.jsx          # Main application entry point
+=======
+# kaushik_portfolioV1
